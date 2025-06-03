@@ -1,0 +1,70 @@
+:root {
+    --color: #c6dbb4;
+}
+
+#desktop-lyrics .lyric {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    user-select: none;
+    white-space: nowrap;
+}
+
+#desktop-lyrics .lyric p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+
+#desktop-lyrics .lyric .shadow {
+    position: absolute;
+    color: var(--color);
+    text-shadow: 0 0 8px var(--color);
+    z-index: 0;
+}
+
+#desktop-lyrics .lyric .gradient {
+    position: absolute;
+    color: white;
+    z-index: 1;
+}
+
+@keyframes progress {
+    0% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#desktop-lyrics .lyric .gradient.active {
+    background: linear-gradient(to right,var(--color) 49%,white 50%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200% auto;
+    animation: progress 1s linear infinite;
+}
+
+#desktop-lyrics svg {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+#desktop-lyrics svg.active {
+    display: block;
+}
+
+#desktop-lyrics .off path {
+    fill: #d3d3d3;
+}
+
+#desktop-lyrics .on path {
+    fill: var(--color);
+}
